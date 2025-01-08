@@ -7,19 +7,19 @@ type Todo = {
 };
 
 function extendTodo(todo: Todo) {
-  console.log(todo.dueDate);
-
-  // todo.dueDate.getDate();
-
-  // if (todo.dueDate instanceof Date) {
-  //   console.log(todo.dueDate);
-
-  //   console.log(todo.dueDate.getDate());
-  // } else {
-  //   console.log(todo.dueDate);
-  // }
-
+  console.log(todo.dueDate.getDate());
+  //  method 1
   if (todo.dueDate instanceof Date) {
+    console.log(todo.dueDate.getDate());
+  } else {
+    console.log(todo.dueDate);
+  }
+
+  //  method 2
+  if (todo.dueDate instanceof Date) {
+    console.log(todo.dueDate.getDate());
+    return;
+  } else if (typeof todo.dueDate === 'number') {
     console.log(todo.dueDate);
     return;
   }
@@ -28,33 +28,20 @@ function extendTodo(todo: Todo) {
 }
 
 function getDescriptionLength(todo: Todo) {
-  // todo.description.length;
+  // console.log(todo.description.length);
 
+  // method 1
   if (todo.description) {
-    return todo.description.length;
+    console.log(todo.description.length);
   }
 
+  // method 2
+  if (typeof todo.description === 'string') {
+    console.log(todo.description.length);
+  }
+
+  // method 3
   return todo.description?.length;
-}
-
-type ErrorResponse = {
-  error: Error;
-  message: string;
-};
-
-type SuccessResponse = {
-  data: any;
-};
-
-type Response = ErrorResponse | SuccessResponse;
-
-function handleResponse(response: Response) {
-  if ('error' in response) {
-    console.log(response.error);
-    console.log(response.message);
-  } else {
-    console.log(response.data);
-  }
 }
 
 type SuccessState = {
@@ -77,9 +64,9 @@ function handleState(state: State) {
   }
 }
 
-function handleItems(items: string[] | string) {
+function handleState2(items: string[] | string) {
   if (Array.isArray(items)) {
-    console.log(items);
+    console.log(items.length);
   } else {
     console.log(items);
   }

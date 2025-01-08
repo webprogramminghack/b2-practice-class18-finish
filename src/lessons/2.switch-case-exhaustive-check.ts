@@ -3,6 +3,13 @@ const AlertLevel = {
   Low: 1,
   Medium: 2,
   High: 3,
+};
+
+const AlertLevel = {
+  Unknown: -1,
+  Low: 1,
+  Medium: 2,
+  High: 3,
 } as const;
 
 type AlertLevelType = (typeof AlertLevel)[keyof typeof AlertLevel];

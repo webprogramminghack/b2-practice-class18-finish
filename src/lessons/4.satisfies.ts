@@ -4,6 +4,7 @@ type Todo = {
   isComplete: boolean;
 };
 
+// example
 const todo: Todo = {
   title: 'Buy milk',
   dueDate: new Date(),
@@ -12,6 +13,7 @@ const todo: Todo = {
 
 todo.dueDate.getDate();
 
+// implementation satisfies
 const todo2 = {
   title: 'Buy milk',
   dueDate: new Date(),

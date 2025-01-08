@@ -1,3 +1,4 @@
+// example 1
 type Cat = {
   meow: () => void;
 };
@@ -23,7 +24,7 @@ if (isCat(animal)) {
   animal.bark();
 }
 
-// another example
+// example 2
 interface Animal {
   name: string;
 }

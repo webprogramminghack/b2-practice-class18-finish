@@ -1,3 +1,4 @@
+// example 1
 // overload signatures
 function calculateArea(radius: number): number;
 function calculateArea(length: number, width: number): number;
@@ -14,8 +15,12 @@ function calculateArea(arg1: number, arg2?: number): number {
 const circleArea = calculateArea(5);
 const rectangleArea = calculateArea(10, 4);
 
+// example 2
+// overload signatures
 function sumNumbers(...args: number[]): number;
 function sumNumbers(x: number[]): number;
+
+// implementation signature
 function sumNumbers(...args: any[]): number {
   if (Array.isArray(args[0])) {
     return (args[0] as number[]).reduce((sum, num) => sum + num, 0);
@@ -27,6 +32,7 @@ function sumNumbers(...args: any[]): number {
 const sum1 = sumNumbers(1, 2, 3, 4);
 const sum2 = sumNumbers([5, 10, 15]);
 
+// example 3
 interface Person {
   id: number;
   firstName: string;
@@ -43,6 +49,8 @@ const persons: Person[] = [
 // overload signatures
 function findPerson(personId: number): Person[];
 function findPerson(firstName: string, lastName: string): Person[];
+
+// implementation signature
 function findPerson(arg1: number | string, arg2?: string): Person[] {
   if (arg2 === undefined) {
     // Search by personId (arg1 is the ID)

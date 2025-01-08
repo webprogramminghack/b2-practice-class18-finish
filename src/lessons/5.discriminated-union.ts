@@ -1,3 +1,4 @@
+// the wrong approach
 type UserApiResponse = {
   status: 'Error' | 'Success';
   data?: { id: string; name: string };
